@@ -1,11 +1,12 @@
-<h1>Login Page</h1>
-<?php   
+<div id="login_form">
+    <h1>Login Page</h1>
+    <?php   
             $attributes = array
             (
                 'class' => 'login',
                 'id'    => 'login'
              );           
-            echo form_open('welcome/validate', $attributes);
+            echo form_open('welcome/validate_credentials', $attributes);
             
             
             $username = array
@@ -35,5 +36,6 @@
             echo form_submit('login', 'Login');
             
             echo form_close();
-?>
+    ?>
+</div>
 
