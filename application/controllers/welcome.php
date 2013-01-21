@@ -8,6 +8,12 @@ class Welcome extends CI_Controller {
     public function index() {
         $this->load->view('landing/index');
     }
+    public function install() {
+        $this->load->view('landing/install');
+    }
+    public function contact() {
+        $this->load->view('landing/contact');
+    }
 
 }
 
