@@ -75,20 +75,16 @@
 
             <div class="row-fluid marketing">
                 <div class="span10">
-                    <h3>Credits</h3>
-                    <p>This system was built on top of these peoples existing work.</p>
+                    <h3>Contact</h3>
+                    
                 </div>
                 <div class="span10">
-                    <h4>Ion Auth</h4>
-                    <p>Authentication library developed by Ben Edmunds for Codeigniter</p>
-                    <p>Link: <?php echo anchor('http://benedmunds.com/ion_auth/'); ?></p>
-                    <p>Github: <?php echo anchor('https://github.com/benedmunds/CodeIgniter-Ion-Auth/'); ?></p>
-                    <h4>Codeigniter</h4>
-                    <p>PHP Framework developed by Ellis Labs</p>
-                    <p>Link: <?php echo anchor('http://ellislab.com/codeigniter'); ?></p>
-                    <h4>Bootstrap</h4>
-                    <p>Web development framework with grids and styles. </p>
-                    <p>Link: <?php echo anchor('http://twitter.github.com/bootstrap/'); ?></p>
+                    <h4>FGHJ</h4>
+                    <p>My portfolio site can be found at: <?php echo anchor('http://fghj.me/'); ?> and you can find me on github here:
+                     <?php echo anchor('https://github.com/archer8'); ?></p>
+                    <h4>Email</h4>
+                    <p>I can be emailed at chrisganly@gmail.com</p>
+                    
                 </div>
             </div>
 

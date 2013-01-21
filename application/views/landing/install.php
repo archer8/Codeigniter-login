@@ -73,27 +73,26 @@
             <hr>
 
 
-            <div class="row-fluid marketing">
-                <div class="span10">
-                    <h3>Credits</h3>
-                    <p>This system was built on top of these peoples existing work.</p>
-                </div>
-                <div class="span10">
-                    <h4>Ion Auth</h4>
-                    <p>Authentication library developed by Ben Edmunds for Codeigniter</p>
-                    <p>Link: <?php echo anchor('http://benedmunds.com/ion_auth/'); ?></p>
-                    <p>Github: <?php echo anchor('https://github.com/benedmunds/CodeIgniter-Ion-Auth/'); ?></p>
-                    <h4>Codeigniter</h4>
-                    <p>PHP Framework developed by Ellis Labs</p>
-                    <p>Link: <?php echo anchor('http://ellislab.com/codeigniter'); ?></p>
-                    <h4>Bootstrap</h4>
-                    <p>Web development framework with grids and styles. </p>
-                    <p>Link: <?php echo anchor('http://twitter.github.com/bootstrap/'); ?></p>
+            <div class="row-fluid">
+                <div class="span12">
+                    <h2>Installation</h3>
+                    
+                </div>                
+                <div class="span12">
+                    <h3>Requirements:</h3>
+                    <p>Apache, MySQL and PHP 5.2 onwards.                        
+                    </p>
+                    <h3>Setting it up:</h3>
+                    <p>Grab the code from <?php echo anchor('https://github.com/archer8/Codeigniter-login/','github.') ?></p>
+                    <p>Change the database config details to match your database, in /application/config/database.php</p>
+                    <p>Import the files in /sql to your database.</p>
+                    <p>Test the login system is working correctly by browsing to localhost/Codeigniter-login/index.php/auth/login (click the green button on the home page) using 'admin@admin.com' for the username and 'password' as the password.</p>
+                    <p>For other notes, check out the auth_ion project at <?php echo anchor('http://benedmunds.com/ion_auth/'); ?></p>
                 </div>
             </div>
 
-            <hr>
 
+            <hr>
             <div class="footer">
                 <p>Pieces put together by <?php echo anchor('http://fghj.me/', 'FGHJ'); ?></p>
             </div>

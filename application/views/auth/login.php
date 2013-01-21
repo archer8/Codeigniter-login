@@ -56,8 +56,15 @@
 
         <div class="container">
 
-
-            <div id="infoMessage"><?php echo $message; ?></div>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4 class="">Hey!</h4>               
+                <p class="">Username: admin@admin.com</p>
+                <p>Password: password</p>
+                
+            </div>
+            
+            <div id="infoMessage" class=""><?php echo $message; ?></div>
 
             <?php
             $attributes = array('class' => 'form-signin');
@@ -90,7 +97,7 @@
         </div>
 
 
-        <script src="<?php echo base_url('assets/js/jquery'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"></script>
 
 

@@ -64,8 +64,8 @@
             <div class="masthead">
                 <ul class="nav nav-pills pull-right">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><?php echo anchor('welcome/install', 'Install');?></li>
-                    <li><?php echo anchor('welcome/contact', 'Contact');?></li>
+                    <li><?php echo anchor('welcome/install', 'Install'); ?></li>
+                    <li><?php echo anchor('welcome/contact', 'Contact'); ?></li>
                 </ul>
                 <h3 class="muted">Generic login & permissions system.</h3>
             </div>
@@ -75,7 +75,8 @@
             <div class="jumbotron">
                 <h1>Login testing system!</h1>
                 <p class="lead">Codeigniter + Bootstrap login system.</p>
-                <a href="auth/login" class="btn btn-large btn-success" href="#">Login</a>
+                <?php $attributes = array('class' => 'btn btn-large btn-success'); ?>
+                <?php echo anchor('auth/login', 'Login', 'class="btn btn-large btn-success"'); ?>
             </div>
 
             <hr>
