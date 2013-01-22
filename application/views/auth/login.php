@@ -64,7 +64,7 @@
                 
             </div>
             
-            <div id="infoMessage" class=""><?php echo $message; ?></div>
+            <div id="infoMessage" class=""><?php echo $message; ?> </div>
 
             <?php
             $attributes = array('class' => 'form-signin');

@@ -1,4 +1,4 @@
-<?php $this->load->view('bootstrap/head2'); ?>
+<?php $this->load->view('bootstrap/head'); ?>
 
 <h1>Forgot Password</h1>
 <p>Please enter your <?php echo $identity_label; ?> so we can send you an email to reset your password.</p>
@@ -15,3 +15,5 @@
       <p><?php echo form_submit('submit', 'Submit');?></p>
       
 <?php echo form_close();?>
+
+<?php $this->load->view('bootstrap/footer'); ?>      

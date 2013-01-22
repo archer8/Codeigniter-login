@@ -1,6 +1,7 @@
-<?php $this->load->view('bootstrap/head2'); ?>
+
+<?php $this->load->view('bootstrap/head'); ?>
 <h1>Users</h1>
-<p>Below is a list of the users.</p>
+<p><a href="<?php echo site_url('auth/create_user');?>">Create a new user</a> | <a href="<?php echo site_url('auth/create_group');?>">Create a new group</a></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
 
@@ -29,4 +30,5 @@
 	<?php endforeach;?>
 </table>
 
-<p><a href="<?php echo site_url('auth/create_user');?>">Create a new user</a> | <a href="<?php echo site_url('auth/create_group');?>">Create a new group</a></p>
+
+<?php $this->load->view('bootstrap/footer'); ?>

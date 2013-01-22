@@ -84,48 +84,7 @@ class Auth extends CI_Controller {
                 'placeholder' => 'Password',
                 'type' => 'password',
             );
-
-            $this->load->view('auth/login', $this->data);
-        }
-    }
-
-    function login2() {
-        $this->data['title'] = "Login";
-
-        //validate form input
-        $this->form_validation->set_rules('identity', 'Identity', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-
-        if ($this->form_validation->run() == true) {
-            //check to see if the user is logging in
-            //check for "remember me"
-            $remember = (bool) $this->input->post('remember');
-
-            if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
-                //if the login is successful
-                //redirect them back to the home page
-                $this->session->set_flashdata('message', $this->ion_auth->messages());
-                redirect('/', 'refresh');
-            } else {
-                //if the login was un-successful
-                //redirect them back to the login page
-                $this->session->set_flashdata('message', $this->ion_auth->errors());
-                redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries
-            }
-        } else {
-            //the user is not logging in so display the login page
-            //set the flash data error message if there is one
-            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-            $this->data['identity'] = array('name' => 'identity',
-                'id' => 'identity',
-                'type' => 'text',
-                'value' => $this->form_validation->set_value('identity'),
-            );
-            $this->data['password'] = array('name' => 'password',
-                'id' => 'password',
-                'type' => 'password',
-            );
+            $this->data['error_boolean'] = 'style="display:none;"';
 
             $this->load->view('auth/login', $this->data);
         }
@@ -380,9 +339,6 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required|xss_clean');
         $this->form_validation->set_rules('email', 'Email Address', 'required|valid_email');
-        $this->form_validation->set_rules('phone1', 'First Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-        $this->form_validation->set_rules('phone2', 'Second Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-        $this->form_validation->set_rules('phone3', 'Third Part of Phone', 'required|xss_clean|min_length[4]|max_length[4]');
         $this->form_validation->set_rules('company', 'Company Name', 'required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
         $this->form_validation->set_rules('password_confirm', 'Password Confirmation', 'required');
@@ -433,24 +389,6 @@ class Auth extends CI_Controller {
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('company'),
             );
-            $this->data['phone1'] = array(
-                'name' => 'phone1',
-                'id' => 'phone1',
-                'type' => 'text',
-                'value' => $this->form_validation->set_value('phone1'),
-            );
-            $this->data['phone2'] = array(
-                'name' => 'phone2',
-                'id' => 'phone2',
-                'type' => 'text',
-                'value' => $this->form_validation->set_value('phone2'),
-            );
-            $this->data['phone3'] = array(
-                'name' => 'phone3',
-                'id' => 'phone3',
-                'type' => 'text',
-                'value' => $this->form_validation->set_value('phone3'),
-            );
             $this->data['password'] = array(
                 'name' => 'password',
                 'id' => 'password',
@@ -488,9 +426,6 @@ class Auth extends CI_Controller {
         //validate form input
         $this->form_validation->set_rules('first_name', 'First Name', 'required|xss_clean');
         $this->form_validation->set_rules('last_name', 'Last Name', 'required|xss_clean');
-        $this->form_validation->set_rules('phone1', 'First Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-        $this->form_validation->set_rules('phone2', 'Second Part of Phone', 'required|xss_clean|min_length[3]|max_length[3]');
-        $this->form_validation->set_rules('phone3', 'Third Part of Phone', 'required|xss_clean|min_length[4]|max_length[4]');
         $this->form_validation->set_rules('company', 'Company Name', 'required|xss_clean');
         $this->form_validation->set_rules('groups', 'Groups', 'xss_clean');
 
@@ -565,24 +500,6 @@ class Auth extends CI_Controller {
             'id' => 'company',
             'type' => 'text',
             'value' => $this->form_validation->set_value('company', $user->company),
-        );
-        $this->data['phone1'] = array(
-            'name' => 'phone1',
-            'id' => 'phone1',
-            'type' => 'text',
-            'value' => $this->form_validation->set_value('phone1', $user->phone[0]),
-        );
-        $this->data['phone2'] = array(
-            'name' => 'phone2',
-            'id' => 'phone2',
-            'type' => 'text',
-            'value' => $this->form_validation->set_value('phone2', $user->phone[1]),
-        );
-        $this->data['phone3'] = array(
-            'name' => 'phone3',
-            'id' => 'phone3',
-            'type' => 'text',
-            'value' => $this->form_validation->set_value('phone3', $user->phone[2]),
         );
         $this->data['password'] = array(
             'name' => 'password',

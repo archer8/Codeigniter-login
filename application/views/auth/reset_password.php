@@ -1,3 +1,6 @@
+
+<?php $this->load->view('bootstrap/head'); ?>
+
 <h1>Change Password</h1>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -20,3 +23,5 @@
 	<p><?php echo form_submit('submit', 'Change');?></p>
       
 <?php echo form_close();?>
+
+<?php $this->load->view('bootstrap/footer'); ?>
